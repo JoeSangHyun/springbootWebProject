@@ -9,6 +9,6 @@ public class HelloController {
     //2) Http Method인 Get의 요청을 받을 수있는 API를 만들어준다.
     @GetMapping("/hello")
     public String hello() {
-        return "hello";
+        return "hello suapapa";
     }
 }
