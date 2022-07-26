@@ -1,7 +1,7 @@
 package com.suapapa.springbootweb.domain.posts;
 
 import org.assertj.core.api.Assertions;
-import org.junit.After;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,13 +13,13 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest // H2 데이터베이스를 자동으로 실행해 준다.
 public class PostRepositoryTest {
 
     @Autowired
     PostRepository postRepository;
 
-    @After // 1)
+    @AfterEach // JUnit 에서 단위 테스트가 끝날때마다 수행되는 메소드를 지정
     public void cleanUp() {
         postRepository.deleteAll();
     }
